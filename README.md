@@ -38,28 +38,28 @@ Admin:
 
 ## Plánované entity
 Používateľ (users):
-Účel: Reprezentuje registrované osoby v systéme.
-Atribúty: id, username, email, password, role, created_at
+- Účel: Reprezentuje registrované osoby v systéme.
+- Atribúty: id, username, email, password, role, created_at
 
 Recept (recipes):
-Účel: Ukladá základné informácie o konkrétnom recepte.
-Atribúty: id, user_id, category_id, title, description, instructions, prep_time_min, image_path, created_at
+- Účel: Ukladá základné informácie o konkrétnom recepte.
+- Atribúty: id, user_id, category_id, title, description, instructions,prep_time_min, image_path, created_at
 
 Ingrediencia (ingredients):
-Účel: Katalóg jednotlivých potravín a surovín.
-Atribúty: id, name, unit (g, ml, ks), calories_per_unit
+- Účel: Katalóg jednotlivých potravín a surovín.
+- Atribúty: id, name, unit (g, ml, ks), calories_per_unit
 
 Ingrediencia receptu (recipe_ingredients):
-Účel: Spájacia entita určujúca, koľko z danej ingrediencie ide do konkrétneho receptu.
-Atribúty: recipe_id, ingredient_id, amount
+- Účel: Spájacia entita určujúca, koľko z danej ingrediencie ide do konkrétneho receptu.
+- Atribúty: recipe_id, ingredient_id, amount
 
 Kategória (categories):
-Účel: Zaraďovanie receptov do prehľadných skupín.
-Atribúty: id, name
+- Účel: Zaraďovanie receptov do prehľadných skupín.
+- Atribúty: id, name
 
 Plánovač jedál (meal_plans):
-Účel: Ukladá naplánované recepty pre daného používateľa v konkrétny deň a čas
-Atribúty: id, user_id, recipe_id, day_of_week, meal_type (raňajky, obed, večera)
+- Účel: Ukladá naplánované recepty pre daného používateľa v konkrétny deň a čas
+- Atribúty: id, user_id, recipe_id, day_of_week, meal_type (raňajky, obed, večera)
 
 ## Vzťahy medzi entitami
 Používateľ – Recept (1:N): Jeden používateľ môže vytvoriť viacero receptov, každý recept patrí práve jednému autorovi
@@ -93,15 +93,15 @@ Správa kategórií a globálnych ingrediencií určená výhradne pre administr
 
 ## Rozdelenie funkcionality
 Základná funkcionalita:
-Registrácia a prihlasovanie používateľov s overovaním rolí (ADMIN, USER)
-Plný CRUD nad entitou Recepty (vytvorenie, zobrazenie, úprava, zmazanie)
-Nahratie a správa obsluhového obrázka k receptu na servery
-Dynamické pridávanie/odoberanie ingrediencií vo formulári
-Týždenný plánovač jedál pre prihláseného používateľa
-Responzívny dizajn pre mobilné aj desktopové zariadenia
+- Registrácia a prihlasovanie používateľov s overovaním rolí (ADMIN, USER)
+- Plný CRUD nad entitou Recepty (vytvorenie, zobrazenie, úprava, zmazanie)
+- Nahratie a správa obsluhového obrázka k receptu na servery
+- Dynamické pridávanie/odoberanie ingrediencií vo formulári
+- Týždenný plánovač jedál pre prihláseného používateľa
+- Responzívny dizajn pre mobilné aj desktopové zariadenia
 
 Rozširujúca funkcionalita:
-Automatické vygenerovanie a export nákupného zoznamu (napr. do PDF alebo TXT)
-Napojenie na externé API pre automatické doťahovanie nutričných hodnôt surovín
-Úprava množstva ingrediencií priamo v tabuľke bez opätovného načítania stránky
-Pokročilá klientska validácia formulárov využívajúca JavaScript framework
+- Automatické vygenerovanie a export nákupného zoznamu (napr. do PDF alebo TXT)
+- Napojenie na externé API pre automatické doťahovanie nutričných hodnôt surovín
+- Úprava množstva ingrediencií priamo v tabuľke bez opätovného načítania stránky
+- Pokročilá klientska validácia formulárov využívajúca JavaScript framework
