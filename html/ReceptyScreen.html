@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartRecipe Hub - Recepty</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="main-header">
+    <div class="header-container">
+        <div class="logo">
+            <span class="logo-icon">🌿</span>
+            <h1>SmartRecipe Hub</h1>
+        </div>
+
+        <nav class="main-nav">
+            <ul>
+                <li><a href="ReceptyScreen.html" class="active">Recepty</a></li>
+                <li><a href="#">Môj plán</a></li>
+                <li><a href="#">Obľúbené</a></li>
+                <li><a href="LayoutScreen.html">Moje recepty</a></li>
+            </ul>
+        </nav>
+
+        <div class="user-profile">
+            <img src="https://via.placeholder.com/40/10b981/ffffff?text=User" alt="Profilová fotka užívateľa" class="user-avatar-img">
+
+            <details class="user-dropdown">
+                <summary class="user-name">
+                    User <span class="dropdown-arrow">▼</span>
+                </summary>
+                <ul class="dropdown-menu">
+                    <li><a href="#">👤 Môj profil</a></li>
+                    <li><a href="LayoutScreen.html">📖 Moje recepty</a></li>
+                    <li><a href="#">⭐ Obľúbené</a></li>
+                    <li><a href="#">📅 Môj plán</a></li>
+                    <li><a href="#">⚙️ Nastavenia účtu</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#" class="logout-link">Odhlásiť sa</a></li>
+                </ul>
+            </details>
+        </div>
+    </div>
+</header>
+
+<details open class="notification-bar">
+    <summary class="notification-content">
+        <span><strong>Oznámenie:</strong> Vytvorte si vlastný jedálniček na tento týždeň a ušetrite čas pri varení!</span>
+        <span class="close-btn" title="Zatvoriť oznámenie">✕</span>
+    </summary>
+</details>
+
+<main class="main-container">
+
+    <div class="search-action-bar">
+        <div class="search-box">
+            <input type="text" placeholder="Text na vyhľadanie (napr. bryndzové halušky)...">
+            <button type="button" class="btn btn-primary">Vyhľadaj</button>
+        </div>
+        <button type="button" class="btn btn-success">+ Pridaj</button>
+    </div>
+
+    <div class="content-layout">
+
+        <aside class="sidebar-filters">
+            <div class="filter-header">
+                <h2>Filtre</h2>
+                <div class="sort-box">
+                    <label for="sort">Zoradiť podľa:</label>
+                    <select id="sort">
+                        <option>Najnovšie</option>
+                        <option>Najobľúbenejšie</option>
+                        <option>Čas prípravy</option>
+                        <option>Kalórie</option>
+                    </select>
+                </div>
+            </div>
+
+            <form class="filter-groups">
+                <div class="filter-group">
+                    <h3>Kategórie</h3>
+                    <label><input type="checkbox" checked> Všetky recepty</label>
+                    <label><input type="checkbox"> Raňajky</label>
+                    <label><input type="checkbox"> Obed</label>
+                    <label><input type="checkbox"> Večera</label>
+                    <label><input type="checkbox"> Dezert</label>
+                </div>
+
+                <div class="filter-group">
+                    <h3>Stravovanie</h3>
+                    <label><input type="checkbox"> Vegetariánske</label>
+                    <label><input type="checkbox"> Vegánske</label>
+                    <label><input type="checkbox"> Bez lepku</label>
+                    <label><input type="checkbox"> Bez laktózy</label>
+                </div>
+
+                <div class="filter-group">
+                    <h3>Čas prípravy</h3>
+                    <select>
+                        <option>Výber (všetko)</option>
+                        <option>Do 15 minút</option>
+                        <option>Do 30 minút</option>
+                        <option>Do 60 minút</option>
+                    </select>
+                </div>
+            </form>
+        </aside>
+
+        <section class="recipes-section">
+            <div class="section-title">
+                <h2>Inšpirácia pre každý deň</h2>
+            </div>
+
+            <div class="recipes-grid">
+
+                <article class="recipe-card">
+                    <div class="card-image">
+                        <span class="img-placeholder">Obrázok</span>
+                        <button class="favorite-btn" aria-label="Pridať do obľúbených">♡</button>
+                    </div>
+                    <div class="card-content">
+                        <span class="recipe-type">Obed</span>
+                        <h3 class="recipe-title">Krémové hubové rizoto</h3>
+                        <div class="recipe-details">
+                            <span>⏱ 30 min</span>
+                            <span>🔥 450 kcal</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="recipe-card">
+                    <div class="card-image">
+                        <span class="img-placeholder">Obrázok</span>
+                        <button class="favorite-btn" aria-label="Pridať do obľúbených">♡</button>
+                    </div>
+                    <div class="card-content">
+                        <span class="recipe-type">Raňajky</span>
+                        <h3 class="recipe-title">Avokádový toast s vajíčkom</h3>
+                        <div class="recipe-details">
+                            <span>⏱ 15 min</span>
+                            <span>🔥 320 kcal</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="recipe-card">
+                    <div class="card-image">
+                        <span class="img-placeholder">Obrázok</span>
+                        <button class="favorite-btn favorite-active" aria-label="Odobrať z obľúbených">♥</button>
+                    </div>
+                    <div class="card-content">
+                        <span class="recipe-type">Dezert</span>
+                        <h3 class="recipe-title">Domáci čučoriedkový koláč</h3>
+                        <div class="recipe-details">
+                            <span>⏱ 45 min</span>
+                            <span>🔥 280 kcal</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="recipe-card">
+                    <div class="card-image">
+                        <span class="img-placeholder">Obrázok</span>
+                        <button class="favorite-btn" aria-label="Pridať do obľúbených">♡</button>
+                    </div>
+                    <div class="card-content">
+                        <span class="recipe-type">Večera</span>
+                        <h3 class="recipe-title">Grilovaný losos so špargľou</h3>
+                        <div class="recipe-details">
+                            <span>⏱ 25 min</span>
+                            <span>🔥 510 kcal</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="recipe-card">
+                    <div class="card-image">
+                        <span class="img-placeholder">Obrázok</span>
+                        <button class="favorite-btn" aria-label="Pridať do obľúbených">♡</button>
+                    </div>
+                    <div class="card-content">
+                        <span class="recipe-type">Obed</span>
+                        <h3 class="recipe-title">Cestoviny Pesto Genovese</h3>
+                        <div class="recipe-details">
+                            <span>⏱ 20 min</span>
+                            <span>🔥 410 kcal</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="recipe-card">
+                    <div class="card-image">
+                        <span class="img-placeholder">Obrázok</span>
+                        <button class="favorite-btn" aria-label="Pridať do obľúbených">♡</button>
+                    </div>
+                    <div class="card-content">
+                        <span class="recipe-type">Raňajky</span>
+                        <h3 class="recipe-title">Ovocná smoothie miska</h3>
+                        <div class="recipe-details">
+                            <span>⏱ 10 min</span>
+                            <span>🔥 210 kcal</span>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+
+            <nav class="pagination">
+                <a href="#" class="active">1</a>
+                <a href="#">2</a>
+                <span class="dots">...</span>
+                <a href="#">10</a>
+            </nav>
+        </section>
+
+    </div>
+</main>
+
+<footer class="main-footer">
+    <div class="container">
+        <p>&copy; 2026 SmartRecipe Hub. Všetky práva vyhradené. Semestrálna práca.</p>
+    </div>
+</footer>
+
+</body>
+</html>
