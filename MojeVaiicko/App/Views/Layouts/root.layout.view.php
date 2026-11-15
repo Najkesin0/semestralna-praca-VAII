@@ -39,6 +39,7 @@
             <span class="nav-label">Navigácia stránky:</span>
             <ul>
                 <li><a href="<?= $link->url('recipe.index') ?>">Recepty</a></li>
+                <li><a href="<?= $link->url('review.index') ?>">Hodnotenia</a></li>
                 <li><a href="#">Môj plán</a></li>
                 <li><a href="#">Obľúbené</a></li>
                 <li><a href="<?= $link->url('home.index') ?>">Moje recepty</a></li>

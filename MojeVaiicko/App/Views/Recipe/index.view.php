@@ -19,11 +19,24 @@
                         <span>⏱ <?= e($recipe->getPrepTime()) ?> min</span>
                         <span>🔥 <?= e($recipe->getCalories()) ?> kcal</span>
                     </div>
+                    <?php
+                    $reviews = $recipe->getReviews();
+                    $reviewCount = count($reviews);
+                    $avgRating = $reviewCount > 0
+                            ? array_sum(array_map(fn($r) => $r->getRating(), $reviews)) / $reviewCount
+                            : null;
+                    ?>
+                    <div class="mt-2">
+                        <a href="<?= $link->url('review.index', ['recipe_id' => $recipe->getId()]) ?>">
+                            ⭐ <?= $avgRating !== null ? number_format($avgRating, 1, ',', '') . ' / 5' : 'bez hodnotenia' ?>
+                            (<?= $reviewCount ?> <?= $reviewCount === 1 ? 'hodnotenie' : ($reviewCount >= 2 && $reviewCount <= 4 ? 'hodnotenia' : 'hodnotení') ?>)
+                        </a>
+                    </div>
                     <div class="mt-3 d-flex gap-2">
                         <a href="<?= $link->url('recipe.edit', ['id' => $recipe->getId()]) ?>" class="btn btn-sm btn-primary">Upraviť</a>
                         <a href="<?= $link->url('recipe.delete', ['id' => $recipe->getId()]) ?>"
                            class="btn btn-sm btn-danger"
-                           onclick="return confirm('Naozaj chcete vymazať tento recept?')">Vymazať</a>
+                           onclick="return confirm('Naozaj chcete vymazať tento recept? Vymažú sa aj všetky jeho hodnotenia.')">Vymazať</a>
                     </div>
                 </div>
             </article>

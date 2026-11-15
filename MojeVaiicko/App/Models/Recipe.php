@@ -72,4 +72,14 @@ class Recipe extends Model
     {
         $this->created_at = $created_at;
     }
+
+    /**
+     * Vráti všetky hodnotenia tohto receptu (vzťah 1:N cez ORM).
+     *
+     * @return Review[]
+     */
+    public function getReviews(): array
+    {
+        return $this->getAllRelated(Review::class, 'recipe_id');
+    }
 }
